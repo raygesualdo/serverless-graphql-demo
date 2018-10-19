@@ -1,0 +1,26 @@
+service: serverless-graphql
+
+provider:
+  name: azure
+  location: West US
+
+functions:
+  graphql:
+    handler: handler.express
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel: anonymous
+      - http: true
+        x-azure-settings:
+          direction: out
+          name: res
+
+plugins:
+  - serverless-azure-functions
+  - serverless-dotenv-plugin
+  - serverless-offline
+
+custom:
+  dotenv:
+    path: ../.env

@@ -1,0 +1,14 @@
+# package directories
+node_modules
+jspm_packages
+/*/lib
+/*/node_modules
+/*/package.json
+
+# Serverless directories
+.serverless
+azure/graphql-function.json
+azure/hello-function.json
+
+# env file(s)
+.env

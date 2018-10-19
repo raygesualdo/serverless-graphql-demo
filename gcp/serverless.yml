@@ -1,0 +1,29 @@
+service: gcp
+
+provider:
+  name: google
+  runtime: nodejs
+  project: serverless-graphql-219904
+  credentials: ~/.gcloud/keyfile.json
+  region: us-east1
+
+functions:
+  graphql:
+    handler: express
+    events:
+      - http: path
+
+package:
+  exclude:
+    - node_modules/**
+    - .gitignore
+    - .git/**
+
+plugins:
+  - serverless-google-cloudfunctions
+  - serverless-dotenv-plugin
+  - serverless-offline
+
+custom:
+  dotenv:
+    path: ../.env
