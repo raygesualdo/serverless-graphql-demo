@@ -1,21 +1,21 @@
 {
   "dependencies": {
-    "apollo-server-express": "^2.1.0",
-    "aws-serverless-express": "^3.3.5",
+    "apollo-server-express": "^2.6.1",
+    "aws-serverless-express": "^3.3.6",
     "azure-function-express": "^2.0.0",
-    "express": "^4.16.4",
-    "graphql": "^14.0.2",
+    "express": "^4.17.1",
+    "graphql": "^14.3.1",
     "graphql-import": "^0.7.1",
-    "mongoose": "^5.3.4"
+    "mongoose": "^5.5.13"
   },
   "devDependencies": {
-    "dotenv": "^6.1.0",
-    "nodemon": "^1.18.4",
-    "serverless": "^1.32.0",
-    "serverless-azure-functions": "^0.6.0",
-    "serverless-dotenv-plugin": "^2.0.1",
-    "serverless-google-cloudfunctions": "^2.0.0",
-    "serverless-offline": "^3.27.0"
+    "dotenv": "^8.0.0",
+    "nodemon": "^1.19.1",
+    "serverless": "^1.44.1",
+    "serverless-azure-functions": "^0.7.0",
+    "serverless-dotenv-plugin": "^2.1.1",
+    "serverless-google-cloudfunctions": "^2.3.2",
+    "serverless-offline": "^5.0.1"
   },
   "nodemonConfig": {
     "ext": "js,graphql"
