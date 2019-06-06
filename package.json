@@ -19,7 +19,6 @@
     "azure-function-express": "^2.0.0",
     "express": "^4.17.1",
     "graphql": "^14.3.1",
-    "graphql-import": "^0.7.1",
     "mongoose": "^5.5.13"
   },
   "devDependencies": {
@@ -30,7 +29,8 @@
     "serverless-azure-functions": "^0.7.0",
     "serverless-dotenv-plugin": "^2.1.1",
     "serverless-google-cloudfunctions": "^2.3.2",
-    "serverless-offline": "^5.0.1"
+    "serverless-offline": "^5.0.1",
+    "serverless-package-external": "^1.1.0"
   },
   "nodemonConfig": {
     "ext": "js,graphql"
