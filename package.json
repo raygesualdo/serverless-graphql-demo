@@ -5,7 +5,7 @@
     "db.reset": "npm-run-all db.drop db.seed",
     "db.seed": "node data/seed.js",
     "deploy": "npm-run-all deploy.*",
-    "deploy.aws": "cd aws && sls deploy",
+    "deploy.aws": "rsync -ah ./node_modules/ ./aws/node_modules/ && cd aws && sls deploy",
     "deploy.azure": "cd azure && sls deploy",
     "deploy.gcp": "cd gcp && sls deploy",
     "remove": "npm-run-all remove.*",
