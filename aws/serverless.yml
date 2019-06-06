@@ -3,20 +3,22 @@ service: serverless-graphql
 provider:
   name: aws
   runtime: nodejs10.x
+  timeout: 15
+  logs:
+    restApi: true
 
 functions:
   graphql:
-    handler: handler.express
+    handler: handler.graphql
     events:
       - http:
-          path: /
+          path: graphql
           method: post
-  playground:
-    handler: handler.express
-    events:
+          cors: true
       - http:
-          path: /
+          path: graphql
           method: get
+          cors: true
 
 plugins:
   - serverless-dotenv-plugin

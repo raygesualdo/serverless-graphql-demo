@@ -1,11 +1,21 @@
 'use strict'
-const awsServerlessExpress = require('aws-serverless-express')
-const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
-const app = require('./lib/express')
+const { ApolloServer } = require('apollo-server-lambda')
+const { typeDefs, resolvers } = require('./lib/graphql')
 
-app.use(awsServerlessExpressMiddleware.eventContext())
-const server = awsServerlessExpress.createServer(app)
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  introspection: true,
+  playground: true,
+})
+const handler = server.createHandler()
 
-module.exports.express = (event, context) => {
-  awsServerlessExpress.proxy(server, event, context)
+module.exports.graphql = (event, context, callback) => {
+  context.callbackWaitsForEmptyEventLoop = false
+
+  if (event.requestContext && event.requestContext.path) {
+    event.path = event.requestContext.path
+  }
+
+  return handler(event, context, callback)
 }
