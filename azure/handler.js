@@ -1,5 +1,12 @@
 'use strict'
-const createHandler = require('azure-function-express').createHandler
-const app = require('./lib/express')
+const { ApolloServer } = require('apollo-server-azure-functions')
+const { typeDefs, resolvers } = require('./lib/graphql')
 
-module.exports.express = createHandler(app)
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  introspection: true,
+  playground: true,
+})
+
+module.exports.graphql = server.createHandler()
