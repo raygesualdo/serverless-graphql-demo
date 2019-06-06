@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "start": "node local/server.js",
+    "db:seed": "node data/seed.js",
+    "db:drop": "node data/drop.js"
+  },
   "dependencies": {
     "apollo-server-express": "^2.6.1",
     "aws-serverless-express": "^3.3.6",
