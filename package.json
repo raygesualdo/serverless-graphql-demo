@@ -6,7 +6,7 @@
     "db.seed": "node data/seed.js",
     "deploy": "npm-run-all deploy.*",
     "deploy.aws": "rsync -ah ./node_modules/ ./aws/node_modules/ && cd aws && sls deploy",
-    "deploy.azure": "cd azure && sls deploy",
+    "deploy.azure": "rsync -ah ./node_modules/ ./azure/node_modules/ && cd azure && sls deploy",
     "deploy.gcp": "cd gcp && sls deploy",
     "remove": "npm-run-all remove.*",
     "remove.aws": "cd aws && sls remove",
