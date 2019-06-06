@@ -1,4 +1,12 @@
 'use strict'
-const app = require('./lib/express')
+const { ApolloServer } = require('apollo-server-cloud-functions')
+const { typeDefs, resolvers } = require('./lib/graphql')
 
-module.exports.express = app
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  introspection: true,
+  playground: true,
+})
+
+module.exports.graphql = server.createHandler()
