@@ -1,4 +1,4 @@
-service: serverless-graphql2
+service: serverless-graphql
 
 provider:
   name: azure
@@ -11,7 +11,6 @@ functions:
       - http: true
         x-azure-settings:
           authLevel: anonymous
-          route: '{*segments}'
       - http: true
         x-azure-settings:
           direction: out
