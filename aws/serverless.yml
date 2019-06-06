@@ -2,8 +2,7 @@ service: serverless-graphql
 
 provider:
   name: aws
-  runtime: nodejs8.10
-  profile: personal
+  runtime: nodejs10.x
 
 functions:
   graphql:
