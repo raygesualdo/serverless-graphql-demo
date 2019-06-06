@@ -1,5 +1,7 @@
-require('dotenv').config()
-const { mongoose } = require('../lib/db')
+const { resolve } = require('path')
+require('dotenv').config({ path: resolve(__dirname, '../.env') })
+
+const mongoose = require('../lib/db')
 
 const drop = async () => {
   console.log('Dropping "library" database.')

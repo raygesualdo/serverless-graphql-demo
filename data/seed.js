@@ -1,5 +1,8 @@
-require('dotenv').config()
-const { Author, Series, Book } = require('../lib/db')
+const { resolve } = require('path')
+require('dotenv').config({ path: resolve(__dirname, '../.env') })
+
+const mongoose = require('../lib/db')
+const { Author, Series, Book } = mongoose.models
 
 const seed = async (author, series, books = []) => {
   // Create author
@@ -93,7 +96,12 @@ Promise.all([
       numberInSeries: 7,
     },
   ]),
-]).then(results => {
-  console.log(results)
-  process.exit(0)
-})
+])
+  .then(results => {
+    console.log(results)
+    process.exit(0)
+  })
+  .catch(error => {
+    console.error(error)
+    process.exit(1)
+  })
