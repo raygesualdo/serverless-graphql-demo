@@ -17,7 +17,7 @@
     "apollo-server-azure-functions": "^2.6.1",
     "apollo-server-cloud-functions": "^2.6.1",
     "apollo-server-express": "^2.6.1",
-    "apollo-server-lambda": "^2.6.1",
+    "apollo-server-lambda": "^2.14.2",
     "graphql": "^14.3.1",
     "mongoose": "^5.5.13"
   },
