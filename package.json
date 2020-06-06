@@ -14,7 +14,7 @@
     "remove.gcp": "cd gcp && sls remove"
   },
   "dependencies": {
-    "apollo-server-azure-functions": "^2.6.1",
+    "apollo-server-azure-functions": "^2.14.2",
     "apollo-server-cloud-functions": "^2.6.1",
     "apollo-server-express": "^2.6.1",
     "apollo-server-lambda": "^2.6.1",
